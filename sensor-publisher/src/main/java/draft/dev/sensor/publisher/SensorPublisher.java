@@ -42,11 +42,11 @@ public class SensorPublisher {
             // Switch expressions to check what type of message to send
             switch (option) {
                 case ITEM_REMOVED -> message = 
-                        "{\"id\":\"0\",\"message\":\"Inventory item removed at:\",\"timestamp\":\"" + formattedDateTime + "\"}";
+                        "{\"id\":\"0\",\"message\":\"Inventory item removed\",\"timestamp\":\"" + formattedDateTime + "\"}";
                 case ITEM_ADDED -> message = ""
-                        + "{\"id\":\"1\",\"message\":\"Inventory item added at:\",\"timestamp\":\"" + formattedDateTime + "\"}";
+                        + "{\"id\":\"1\",\"message\":\"Inventory item added\",\"timestamp\":\"" + formattedDateTime + "\"}";
                 case INVENTORY_LOW -> message = 
-                        "{\"id\":\"2\",\"message\":\"The was low at:\",\"timestamp\":\"" + formattedDateTime + "\"}";
+                        "{\"id\":\"2\",\"message\":\"Stock is low:\",\"timestamp\":\"" + formattedDateTime + "\"}";
             }
             
             byte[] messageBytes = message.getBytes(StandardCharsets.UTF_8);
