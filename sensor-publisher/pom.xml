@@ -10,12 +10,34 @@
             <groupId>io.nats</groupId>
             <artifactId>jnats</artifactId>
             <version>2.20.6</version>
-            <type>jar</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcprov-lts8on</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
+      <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.5.2</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>23</maven.compiler.release>
-        <exec.mainClass>com.mycompany.sensor.publisher.SensorPublisher</exec.mainClass>
+        <exec.mainClass>draft.dev.sensor.publisher.SensorPublisher</exec.mainClass>
     </properties>
 </project>
