@@ -51,7 +51,7 @@ public class SensorPublisher {
             
             byte[] messageBytes = message.getBytes(StandardCharsets.UTF_8);
             nc.publish("inventory", messageBytes);
-
+            System.out.println("Messsage published to Nats: " + message);
             Thread.sleep(200);
 
         } catch (InterruptedException | IOException e) {
