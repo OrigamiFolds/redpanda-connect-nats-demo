@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 /**
  *
  * @author Mduduzi Sibisi
+ *
  */
 public class SensorDispatcher {
 
